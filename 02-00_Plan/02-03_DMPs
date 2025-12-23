@@ -1,0 +1,665 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+    <style>
+
+/* Body Styling for compatibility with LibGuides */
+body.s-lg-guide-body #s-lib-footer-public.container {
+    width: 100%;
+    max-width: none;       /* remove Bootstrap's max-width cap */
+    padding-left: 0;       /* optional: remove side padding */
+    padding-right: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reusable Centred Container for inner content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Full-width header/footer bars */
+.site-header,
+.site-footer {
+    width: 100%;
+}
+
+/* Inner header/footer content stays centered */
+.site-header .container,
+.site-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* tweak as needed */
+    gap: 16px;
+}
+        
+/* Make images responsive in content */
+.img {
+    max-width: 100%;
+    height: auto
+}
+        
+        
+/* Primary Button Styling */
+.primary-button {
+    background-color: #007fa3;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+    background-color: #1e3765;
+    color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+}
+
+/* Secondary Button Styling */
+.link-button {
+    background-color: #ffffff;
+    color: #1e3765;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.link-button:hover,
+.link-button:focus {
+    background-color: #007fa3;
+    color: #ffffff;
+    border-color: #007fa3;
+    text-decoration: none;
+}
+
+/* Tertiary Button Styling */
+.tertiary-button {
+    background-color: #ffffff;
+    color: #1e3765;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.tertiary-button:hover,
+.tertiary-button:focus {
+    background-color: #f0f8ff;
+    color: #007fa3;
+    border-color: #1e3765;
+    text-decoration: none;
+}
+        
+/* Resource Item Styling */
+.resource-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #f0f8ff;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+}
+
+.resource-item h5 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+}
+        
+.resource-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+        
+.last-updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+        
+/* Downloadable Item Styling */
+.download-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    background-color: #e3f2fd;
+}
+
+.download-item h5 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+}
+        
+.download-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+        
+.last-updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Primary Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+        
+  .primary-grid-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #1e3765;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    position: relative;
+}
+
+.primary-grid-card:focus-within {
+    outline: 2px solid #1e3765;
+    outline-offset: 2px;
+}
+
+.primary-card-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-self: flex-start; 
+}
+
+.primary-grid-card h2 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.primary-card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.primary-card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Grid Card Styling */
+.grid-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+        
+.grid-card:focus-within {
+    outline: 2px solid #007fa3;
+    outline-offset: 2px;
+}
+        
+.grid-card h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+    margin-top: 0;
+}
+        
+.card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    flex-grow: 1;
+    font-size: 14px;
+}
+        
+.card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.grid-card-button {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.grid-card-button:hover,
+.grid-card-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 127, 163, 0.2);
+    background-color: #fafafa;
+    outline: none;
+}
+
+.grid-card-button h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.grid-card-button .card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.grid-card-button .card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Accordion Styling */
+.accordion-container {
+    max-width: 750px;
+    width: 100%;
+}
+        
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+        
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: #f2f4f7;
+    color: #1e3765;
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+        
+.accordion-header:hover {
+    background-color: #e8ecf0;
+}
+        
+.accordion-header h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+        
+.accordion-icon {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    min-width: 20px;
+    text-align: center;
+}
+        
+.accordion-content {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    display: none;
+}
+        
+.accordion.open .accordion-content {
+    display: block;
+}
+        
+.accordion.open .accordion-icon {
+    transform: rotate(180deg);
+}
+        
+.accordion-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+        
+.accordion-content li {
+    margin-bottom: 8px;
+}
+        
+.accordion-content a {
+    text-decoration: none;
+}
+        
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+        
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #007fa3;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+        
+.skip-link:focus {
+    top: 6px;
+}
+        
+/* Horizontal Rule Styling */
+.hr-custom {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+        
+.hr-pt-20 {
+    margin-top: 40px;
+}
+        
+/* Heading Styling */
+h1 {
+    color: #1e3765;
+    padding-bottom: 10px;
+    font-size: 28px;
+}
+        
+h2 {
+    color: #1e3765;
+    padding-bottom: 10px;
+}
+        
+h3 {
+    color: #1e3765;
+    margin-top: 25px;
+    font-size: 18px;
+}
+        
+h4 {
+    color: #007fa3;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 800;
+    font-size: 16px;
+}
+        
+/* Grid card specific h3 styling */
+.grid-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+}
+        
+/* Visually hidden utility class */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+        
+/* Responsive Design */
+@media (max-width: 768px) {
+.grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    }
+            
+.grid-card {
+    min-height: auto;
+    }
+}
+        
+@media (max-width: 1024px) and (min-width: 769px) {
+.grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+        
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+.primary-button,
+.link-button,
+.tertiary-button,
+.accordion-header,
+.accordion-icon {
+    transition: none;
+    }
+}
+</style>
+
+<h2><b>Data Management Plans</b></h2>
+
+<p>A data management plan (DMP) is a formal document that outlines how a researcher intends to manage their research data during and after a project. It is sometimes referred to as a data sharing plan (DSP) or a data management and sharing plan (DMSP).</p>
+
+<p>Creating a DMP can help you:</p>
+
+<ul>
+	<li>Make decisions about managing your data and understand the implications of those decisions</li>
+	<li>Identify resources and tools needed for your research</li>
+	<li>Estimate costs for resources and tools and budget accordingly</li>
+	<li>Anticipate and mitigate problems (e.g. data loss, duplication of effort, security breaches)</li>
+	<li>Ensure everyone in your research group understands what is happening with the data</li>
+</ul>
+
+<p>&nbsp;</p>
+
+<div class="accordion-container">
+<div class="accordion"><button aria-controls="content-1" aria-expanded="false" class="accordion-header"><span>Creating a DMP</span> <span class="accordion-icon"></span></button>
+
+<div class="accordion-content" id="content-1">
+<p>A DMP should follow the format specified by a funder or any other relevant requirements. If no format is specified you can create a DMP in whatever way works for you (e.g., a text document or Excel file). You can use the DMP <a href="https://onesearch.library.utoronto.ca/sites/default/public/rdm/DMP_Planning_Checklist_UTL_2024-03-25.pdf" rel="noopener" target="_blank">Planning Checklist</a> and <a href="https://onesearch.library.utoronto.ca/sites/default/public/rdm/dmp_planning_question_guide_-_u_of_t_libraries_-_apr2021.pdf" rel="noopener" target="_blank">Question Guide</a> to help develop your DMP.</p>
+
+<p>DMPs should be created in consultation with all research group members and partners. If you are conducting research with Indigenous communities, your DMP should be co-created with those communities.</p>
+</div>
+</div>
+
+<div class="accordion"><button aria-controls="content-2" aria-expanded="false" class="accordion-header"><span>Online DMP tools</span> <span class="accordion-icon"></span></button>
+
+<div class="accordion-content" id="content-2">
+<p>There are a number of free, online tools that can help you draft and store your DMP. These tools provide templates based on discipline, research method, institutional context, and funding requirements.</p>
+
+<ul>
+	<li><a href="https://dmp-pgd.ca/" rel="noopener" target="_blank">DMP Assistant</a> (Canada, provides templates based on discipline and research method)</li>
+	<li><a href="https://dmponline.dcc.ac.uk/" rel="noopener" target="_blank">DMPOnline</a> (United Kingdom, provides templates from various UK funding agencies)</li>
+	<li><a href="https://dmptool.org/" rel="noopener" target="_blank">DMPTool</a>&nbsp;(United States, provides templates from various US funding agencies)</li>
+</ul>
+</div>
+</div>
+
+<div class="accordion"><button aria-controls="content-3" aria-expanded="false" class="accordion-header"><span>Examples of DMPs</span> <span class="accordion-icon"></span></button>
+
+<div class="accordion-content" id="content-3">
+<p>Below are examples of researcher-created DMPs. Note that they may not be vetted and may not reflect best practices.</p>
+<b>Canadian examples</b>
+<ul>
+	<li><a href="https://rdm.mcmaster.ca/dmps" rel="noopener" target="_blank">Canadian and international examples from McMaster University&#39;s Data Management Plan Database</a></li>
+    <li><a href="https://zenodo.org/communities/alliancecan/records?q=exemplar&l=list&p=1&s=10&sort=bestmatch" rel="noopener" target="_blank">Canadian examples from the Digital Research Alliance of Canada</a></li>
+	<li><a href="https://dmp-pgd.ca/public_plans" rel="noopener" target="_blank">Canadian examples from DMP Assistant</a></li>
+</ul>
+<b>US examples</b>
+<ul>
+	<li><a href="https://sharing.nih.gov/data-management-and-sharing-policy/planning-and-budgeting-for-data-management-and-sharing/writing-a-data-management-and-sharing-plan#sample-plans" rel="noopener" target="_blank">NIH sample data management and sharing plans</a></li>
+	<li><a href="https://dmptool.org/public_plans" rel="noopener" target="_blank">US examples from DMPTool</a></li>
+</ul>
+<b>UK examples</b>
+<ul>
+	<li><a href="https://www.dcc.ac.uk/resources/data-management-plans/guidance-examples" rel="noopener" target="_blank">UK examples from the Digital Curation Centre</a></li>
+	<li><a href="https://dmponline.dcc.ac.uk/public_plans" rel="noopener" target="_blank">UK examples from DMPonline</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<p>&nbsp;</p>
+
+<hr class="hr-custom hr-pt-20" />
+<h3><b>Resources</b></h3>
+
+<h4><b>Library resources</b></h4>
+
+<div class="download-item">
+<h5>DMP Planning Checklist</h5>
+
+<p class="resource-description">This checklist can be used to ensure you&#39;ve included all relevant information in a DMP or to help you gather information you will need to complete your DMP.</p>
+<a class="link-button" href="https://guides.library.utoronto.ca/ld.php?content_id=37666664" target="_blank"><img alt="Download icon" loading="lazy" src="https://d1qywhc7l90rsa.cloudfront.net/accounts/166980/images/file_save_24dp_007FA3_FILL0_wght400_GRAD0_opsz24.png" style="width: 20px; height: 20px;" /> Download Planning Checklist (PDF) </a>
+
+<p class="last-updated">Last updated: 2024-03-25</p>
+</div>
+
+<div class="download-item">
+<h5>DMP Guiding Questions</h5>
+
+<p class="resource-description">This guide includes prompting questions and guidance to help you develop a DMP.</p>
+<a class="link-button" href="https://guides.library.utoronto.ca/ld.php?content_id=37666666" target="_blank"><img alt="Download icon" loading="lazy" src="https://d1qywhc7l90rsa.cloudfront.net/accounts/166980/images/file_save_24dp_007FA3_FILL0_wght400_GRAD0_opsz24.png" style="width: 20px; height: 20px;" /> Download Question Guide (PDF) </a>
+
+<p class="last-updated">Last updated: 2021-04-01</p>
+</div>
+
+<h4><b>Library services</b></h4>
+
+<p>The library provides support for:</p>
+
+<ul>
+	<li>Understanding what information and level of detail to include in a DMP</li>
+	<li>Navigating funder and journal requirements</li>
+	<li>Reviewing DMPs for completeness</li>
+	<li>DMP Assistant</li>
+</ul>
+
+<p>Please note that our services are intended to provide support and guidance. The library cannot validate methodological approaches.</p>
+
+<h4><b>External resources</b></h4>
+
+<ul>
+	<li><a href="https://zenodo.org/records/4004957#.YpYlgHbMJGM" rel="noopener" target="_blank">Brief Guide - Create an Effective Data Management Plan</a> (Digital Research Alliance of Canada)</li>
+	<li><a href="https://zenodo.org/records/4495482" rel="noopener" target="_blank">Brief Guide - Data Management Plan</a> (Digital Research Alliance of Canada)</li>
+	<li><a href="https://www.youtube.com/playlist?list=PL2jE_DQZemnWs5Qb3mBrbYXAaylF5mTUv" rel="noopener" target="_blank">DMP Assistant Video Tutorial Series</a> (Digital Research Alliance of Canada)</li>
+	<li><a href="https://zenodo.org/records/4495631" rel="noopener" target="_blank">Primer - Data Management Plans </a>(Digital Research Alliance of Canada)</li>
+	<li><a href="https://www.sshrc-crsh.gc.ca/funding-financement/apply-demande/guides/guide_preparing_data_management_plan-guide_preparation_plan_gestion_donnees-eng.aspx" rel="noopener" target="_blank">Guide to Preparing a Data Management Plan</a> (SSHRC - Social Sciences and Humanities Research Council)</li>
+	<li><a href="https://www.neh.gov/sites/default/files/inline-files/Data%20Management%20Plans%2C%202019.pdf" rel="noopener" target="_blank">Data Management Plans for NEH Office of Digital Humanities Proposals and Awards</a> (NEH - National Endowment for the Humanities)</li>
+	<li><a href="https://sharing.nih.gov/data-management-and-sharing-policy/planning-and-budgeting-for-data-management-and-sharing/writing-a-data-management-and-sharing-plan#after" rel="noopener" target="_blank">Writing a Data Management &amp; Sharing Plan</a> (NIH - National Institutes of Health)</li>
+	<li><a href="https://new.nsf.gov/funding/data-management-plan" rel="noopener" target="_blank">Preparing Your Data Management Plan</a> (NSF - National Science Foundation)</li>
+	<li><a href="https://www.uu.nl/en/research/research-data-management/guides/costs-of-data-management" rel="noopener" target="_blank">Costs of Data Management</a> (Utrecht University)</li>
+	<li><a href="https://ukdataservice.ac.uk//app/uploads/costingtool.pdf" rel="noopener" target="_blank">Data management costing tool and checklist</a> (UK Data Service)</li>
+	<li><a href="https://www.dcc.ac.uk/guidance/how-guides/develop-data-plan" rel="noopener" target="_blank">How to Develop a Data Management and Sharing Plan</a> (Digital Curation Centre)</li>
+</ul>
+<script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordion = header.parentElement;
+                const content = accordion.querySelector('.accordion-content');
+                const isOpen = accordion.classList.contains('open');
+                
+                // Close all other accordions (optional - remove these lines for multiple open accordions)
+                document.querySelectorAll('.accordion').forEach(acc => {
+                    if (acc !== accordion) {
+                        acc.classList.remove('open');
+                        acc.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle the current accordion
+                accordion.classList.toggle('open');
+                header.setAttribute('aria-expanded', !isOpen);
+                
+                // Smooth animation (optional enhancement)
+                if (!isOpen) {
+                    content.style.display = 'block';
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                    setTimeout(() => {
+                        content.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+        
+        // Add smooth animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .accordion-content {
+                transition: max-height 0.3s ease-out;
+                overflow: hidden;
+                max-height: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+
+<p>&nbsp;</p>

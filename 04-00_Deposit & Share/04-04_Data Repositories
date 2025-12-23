@@ -1,0 +1,678 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+    <style>
+
+/* Body Styling for compatibility with LibGuides */
+body.s-lg-guide-body #s-lib-footer-public.container {
+    width: 100%;
+    max-width: none;       /* remove Bootstrap's max-width cap */
+    padding-left: 0;       /* optional: remove side padding */
+    padding-right: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reusable Centred Container for inner content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Full-width header/footer bars */
+.site-header,
+.site-footer {
+    width: 100%;
+}
+
+/* Inner header/footer content stays centered */
+.site-header .container,
+.site-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* tweak as needed */
+    gap: 16px;
+}
+        
+/* Make images responsive in content */
+.img {
+    max-width: 100%;
+    height: auto
+}
+        
+        
+/* Primary Button Styling */
+.primary-button {
+    background-color: #007fa3;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+    background-color: #1e3765;
+    color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+}
+
+/* Secondary Button Styling */
+.link-button {
+    background-color: #ffffff;
+    color: #1e3765;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.link-button:hover,
+.link-button:focus {
+    background-color: #007fa3;
+    color: #ffffff;
+    border-color: #007fa3;
+    text-decoration: none;
+}
+
+/* Tertiary Button Styling */
+.tertiary-button {
+    background-color: #ffffff;
+    color: #1e3765;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.tertiary-button:hover,
+.tertiary-button:focus {
+    background-color: #f0f8ff;
+    color: #007fa3;
+    border-color: #1e3765;
+    text-decoration: none;
+}
+        
+/* Resource Item Styling */
+.resource-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #f0f8ff;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+}
+
+.resource-item h5 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+}
+        
+.resource-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+        
+.last-updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+        
+/* Downloadable Item Styling */
+.download-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    background-color: #e3f2fd;
+}
+
+.download-item h5 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+}
+        
+.download-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+        
+.last-updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Primary Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+        
+  .primary-grid-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #1e3765;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    position: relative;
+}
+
+.primary-grid-card:focus-within {
+    outline: 2px solid #1e3765;
+    outline-offset: 2px;
+}
+
+.primary-card-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-self: flex-start; 
+}
+
+.primary-grid-card h2 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.primary-card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.primary-card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Grid Card Styling */
+.grid-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+        
+.grid-card:focus-within {
+    outline: 2px solid #007fa3;
+    outline-offset: 2px;
+}
+        
+.grid-card h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+    margin-top: 0;
+}
+        
+.card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    flex-grow: 1;
+    font-size: 14px;
+}
+        
+.card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.grid-card-button {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.grid-card-button:hover,
+.grid-card-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 127, 163, 0.2);
+    background-color: #fafafa;
+    outline: none;
+}
+
+.grid-card-button h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.grid-card-button .card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.grid-card-button .card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Accordion Styling */
+.accordion-container {
+    max-width: 750px;
+    width: 100%;
+}
+        
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+        
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: #f2f4f7;
+    color: #1e3765;
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+        
+.accordion-header:hover {
+    background-color: #e8ecf0;
+}
+        
+.accordion-header h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+        
+.accordion-icon {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    min-width: 20px;
+    text-align: center;
+}
+        
+.accordion-content {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    display: none;
+}
+        
+.accordion.open .accordion-content {
+    display: block;
+}
+        
+.accordion.open .accordion-icon {
+    transform: rotate(180deg);
+}
+        
+.accordion-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+        
+.accordion-content li {
+    margin-bottom: 8px;
+}
+        
+.accordion-content a {
+    text-decoration: none;
+}
+        
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+        
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #007fa3;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+        
+.skip-link:focus {
+    top: 6px;
+}
+        
+/* Horizontal Rule Styling */
+.hr-custom {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+        
+.hr-pt-20 {
+    margin-top: 40px;
+}
+        
+/* Heading Styling */
+h1 {
+    color: #1e3765;
+    padding-bottom: 10px;
+    font-size: 28px;
+}
+        
+h2 {
+    color: #1e3765;
+    padding-bottom: 10px;
+}
+        
+h3 {
+    color: #1e3765;
+    margin-top: 25px;
+    font-size: 18px;
+}
+        
+h4 {
+    color: #007fa3;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 800;
+    font-size: 16px;
+}
+        
+/* Grid card specific h3 styling */
+.grid-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+}
+        
+/* Visually hidden utility class */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+        
+/* Responsive Design */
+@media (max-width: 768px) {
+.grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    }
+            
+.grid-card {
+    min-height: auto;
+    }
+}
+        
+@media (max-width: 1024px) and (min-width: 769px) {
+.grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+        
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+.primary-button,
+.link-button,
+.tertiary-button,
+.accordion-header,
+.accordion-icon {
+    transition: none;
+    }
+}
+</style>
+<body>
+    <h2><b>Data Repositories</b></h2>
+    <p>Data repositories are platforms that hold data, organize it in a logical way, and can make it available for reuse. They are used by research communities to share and discover data.</p>
+
+    <p>There are three main types of data repositories:</p>
+    <ol>
+        <li><strong>Disciplinary repositories</strong> focus on a particular area of research or type of data. They often have requirements for data formats, documentation, and metadata. You can find disciplinary data repositories by checking in with your peers, reviewing relevant journals for recommendations, or reviewing <a href="https://www.re3data.org/" rel="noopener" target="_blank">re3data</a>.</li>
+        <br>
+        <li><strong>Multidisciplinary/generalist repositories</strong> are not focused on a particular field and typically accept all types of data. Some examples of multidisciplinary repositories include <a href="https://www.frdr-dfdr.ca/repo/" rel="noopener" target="_blank">FRDR</a>, <a href="https://datadryad.org/" rel="noopener" target="_blank">Dryad</a>, <a href="https://zenodo.org/" rel="noopener" target="_blank">Zenodo</a>, and <a href="https://figshare.com/" rel="noopener" target="_blank">Figshare</a>.</li>
+        <br>
+        <li><strong>Institutional data repositories</strong> are generalist repositories provided by a specific institution. <a href="https://borealisdata.ca/dataverse/toronto" rel="noopener" target="_blank"></a>U of T Dataverse</a> in Borealis is the University of Toronto institutional data repository. It accepts research data from research conducted at or under the auspices of the University of Toronto. For more information, go to <a href="https://guides.library.utoronto.ca/u-t-dataverse/" rel="noopener" target="_blank">U of T Dataverse in Borealis: Depositing Research Data</a>.</li>
+    </ol>
+
+    <hr class="hr-custom hr-pt-20" />
+
+    <h3><b>Selecting a data repository</b></h3>
+    <p>Different data repositories offer different services and functions. Some things to consider before selecting a repository include:</p>
+    <br>
+
+    <div class="accordion-container">
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-1">
+                <span>Funder or journal requirements</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-1">
+                <p>Some funders, journals, or publishers may require or recommend that data be deposited in specific repositories. </p> 
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-2">
+                <span>Disciplinary research data</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-2">
+                <p>Depositing your data in a disciplinary repository can make it easier for other researchers in your field to find and use it. It may also be common or expected practices to deposit data in certain repositories.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-3">
+                <span>DOIs and persistent identifiers</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-3">
+                <p>Most repositories provide datasets with a persistent identifier, such as a DOI, that makes it easier for others to cite your work. Check what type of PID the repository offers and whether it meets your needs.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-4">
+                <span>Access restrictions</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-4">
+                <p>Some repositories allow you to apply access restrictions to certain files or whole datasets. This means that you (or in some cases, the repository) can review and approve requests to access the data before it can be viewed or downloaded.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-5">
+                <span>Data licensing</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-5">
+                <p>Different repositories will allow you to apply different types of licenses. Check to see what options are available and ensure they work for you. Common examples of licenses that can be applied to data include <a href="https://creativecommons.org/" rel="noopener" target="_blank">Creative Commons</a> Creative Commons and <a href="https://opendatacommons.org/" rel="noopener" target="_blank">Open Data Commons</a>.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-6">
+                <span>Cost</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-6">
+                <p>Some repositories are free to use while others may have an associated cost. Reviewing potential repositories at the beginning of your project will allow you to budget accordingly. U of T Dataverse is available to U of T researchers at no cost. For more information, go to <a href="https://guides.library.utoronto.ca/uoftdataverse/" rel="noopener" target="_blank"><strong>U of T Dataverse in Borealis: Depositing Research Data</strong></a>.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-7">
+                <span>Retention and preservation</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-7">
+                <p>Repositories may differ in how long they will keep your data and what preservation actions they perform to ensure it remains accessible and usable.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-8">
+                <span>Ability to update dataset</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-8">
+                <p>Some repositories allow you to update your dataset yourself (e.g. adding new versions, updating metadata) while others do not.</p>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-9">
+                <span>Curation services</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-9">
+                <p>Some repositories provide added value to your data through curation to meet deposit standards. The type of curation activities will vary, but may include things like metadata creation, applying keywords, validating files, indexing data for discoverability, and more. These actions can make your data easier for others to find, understand, and reuse.</p>
+            </div>
+        </div>
+
+    <hr class="hr-custom hr-pt-20" />
+
+    <h3><b>Resources</b></h3>
+
+    <h4><b>Library services</b></h4>
+    <p>The library provides support for:</p>
+    <ul>
+        <li><a href="https://library.utoronto.ca/use/service/rdm" rel="noopener" target="_blank">Selecting a data repository</a></li>
+        <li><a href="https://borealisdata.ca/dataverse/toronto" rel="noopener" target="_blank">U of T Dataverse</a> in Borealis, the institutional data repository</li>
+    </ul>
+            
+    <h4><b>External resources</b></h4>
+    <ul>
+        <li><a href="https://zenodo.org/record/4001009" rel="noopener" target="_blank">Primer - FRDR </a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://zenodo.org/record/4000995" rel="noopener" target="_blank">Brief Guide to FRDR</a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://learn.scholarsportal.info/modules/portage/research-data-repositories-101-module-1/" rel="noopener" target="_blank">Research Data Repositories 101</a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://www.youtube.com/playlist?list=PLX9EpizS4A0suoSV2N0nn9parl96xHPkz" rel="noopener" target="_blank">YouTube Playlist - Get Started with FRDR</a> (Canadian Association of Research Libraries)</li>
+        <li><a href="https://www.dropbox.com/s/maeyqhumra1yp7d/FindingRepos_Slides_MIT.pdf?dl=0" rel="noopener" target="_blank">Finding a Data Repository</a> (MIT)</li>
+    </ul>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordion = header.parentElement;
+                const content = accordion.querySelector('.accordion-content');
+                const isOpen = accordion.classList.contains('open');
+                
+                // Close all other accordions (optional - remove these lines for multiple open accordions)
+                document.querySelectorAll('.accordion').forEach(acc => {
+                    if (acc !== accordion) {
+                        acc.classList.remove('open');
+                        acc.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle the current accordion
+                accordion.classList.toggle('open');
+                header.setAttribute('aria-expanded', !isOpen);
+                
+                // Smooth animation (optional enhancement)
+                if (!isOpen) {
+                    content.style.display = 'block';
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                    setTimeout(() => {
+                        content.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+        
+        // Add smooth animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .accordion-content {
+                transition: max-height 0.3s ease-out;
+                overflow: hidden;
+                max-height: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

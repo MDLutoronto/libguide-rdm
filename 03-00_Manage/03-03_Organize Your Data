@@ -1,0 +1,652 @@
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+    <style>
+
+/* Body Styling for compatibility with LibGuides */
+body.s-lg-guide-body #s-lib-footer-public.container {
+    width: 100%;
+    max-width: none;       /* remove Bootstrap's max-width cap */
+    padding-left: 0;       /* optional: remove side padding */
+    padding-right: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reusable Centred Container for inner content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Full-width header/footer bars */
+.site-header,
+.site-footer {
+    width: 100%;
+}
+
+/* Inner header/footer content stays centered */
+.site-header .container,
+.site-footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* tweak as needed */
+    gap: 16px;
+}
+        
+/* Make images responsive in content */
+.img {
+    max-width: 100%;
+    height: auto
+}
+        
+        
+/* Primary Button Styling */
+.primary-button {
+    background-color: #007fa3;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+    background-color: #1e3765;
+    color: #ffffff;
+    border-color: #ffffff;
+    text-decoration: none;
+}
+
+/* Secondary Button Styling */
+.link-button {
+    background-color: #ffffff;
+    color: #1e3765;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.link-button:hover,
+.link-button:focus {
+    background-color: #007fa3;
+    color: #ffffff;
+    border-color: #007fa3;
+    text-decoration: none;
+}
+
+/* Tertiary Button Styling */
+.tertiary-button {
+    background-color: #ffffff;
+    color: #1e3765;
+    font-family: Arial, sans-serif;
+    padding: 10px 15px;
+    border: 1px solid #007fa3;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.tertiary-button:hover,
+.tertiary-button:focus {
+    background-color: #f0f8ff;
+    color: #007fa3;
+    border-color: #1e3765;
+    text-decoration: none;
+}
+        
+/* Resource Item Styling */
+.resource-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #f0f8ff;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+}
+
+.resource-item h5 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+}
+        
+.resource-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+        
+.last-updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+        
+/* Downloadable Item Styling */
+.download-item {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #e3f2fd;
+    border-radius: 8px;
+    background-color: #e3f2fd;
+}
+
+.download-item h5 {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+}
+        
+.download-description {
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+        
+.last-updated {
+    font-size: 12px;
+    color: #666;
+    margin-top: 8px;
+}
+
+/* Primary Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+        
+  .primary-grid-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #1e3765;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    position: relative;
+}
+
+.primary-grid-card:focus-within {
+    outline: 2px solid #1e3765;
+    outline-offset: 2px;
+}
+
+.primary-card-image {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    align-self: flex-start; 
+}
+
+.primary-grid-card h2 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.primary-card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #ffffff;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.primary-card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Grid Card Styling */
+.grid-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+}
+        
+.grid-card:focus-within {
+    outline: 2px solid #007fa3;
+    outline-offset: 2px;
+}
+        
+.grid-card h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+    margin-top: 0;
+}
+        
+.card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    flex-grow: 1;
+    font-size: 14px;
+}
+        
+.card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.grid-card-button {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.grid-card-button:hover,
+.grid-card-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 127, 163, 0.2);
+    background-color: #fafafa;
+    outline: none;
+}
+
+.grid-card-button h5 {
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #1e3765;
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.grid-card-button .card-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.grid-card-button .card-button {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+/* Accordion Styling */
+.accordion-container {
+    max-width: 750px;
+    width: 100%;
+}
+        
+.accordion {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+        
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 15px 20px;
+    background-color: #f2f4f7;
+    color: #1e3765;
+    font-size: 16px;
+    font-weight: bold;
+    user-select: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.2s ease;
+}
+        
+.accordion-header:hover {
+    background-color: #e8ecf0;
+}
+        
+.accordion-header h3 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+        
+.accordion-icon {
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+    min-width: 20px;
+    text-align: center;
+}
+        
+.accordion-content {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    display: none;
+}
+        
+.accordion.open .accordion-content {
+    display: block;
+}
+        
+.accordion.open .accordion-icon {
+    transform: rotate(180deg);
+}
+        
+.accordion-content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+        
+.accordion-content li {
+    margin-bottom: 8px;
+}
+        
+.accordion-content a {
+    text-decoration: none;
+}
+        
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+        
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #007fa3;
+    color: #ffffff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+}
+        
+.skip-link:focus {
+    top: 6px;
+}
+        
+/* Horizontal Rule Styling */
+.hr-custom {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+        
+.hr-pt-20 {
+    margin-top: 40px;
+}
+        
+/* Heading Styling */
+h1 {
+    color: #1e3765;
+    padding-bottom: 10px;
+    font-size: 28px;
+}
+        
+h2 {
+    color: #1e3765;
+    padding-bottom: 10px;
+}
+        
+h3 {
+    color: #1e3765;
+    margin-top: 25px;
+    font-size: 18px;
+}
+        
+h4 {
+    color: #007fa3;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 800;
+    font-size: 16px;
+}
+        
+/* Grid card specific h3 styling */
+.grid-card h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    
+}
+        
+/* Visually hidden utility class */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+        
+/* Responsive Design */
+@media (max-width: 768px) {
+.grid-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    }
+            
+.grid-card {
+    min-height: auto;
+    }
+}
+        
+@media (max-width: 1024px) and (min-width: 769px) {
+.grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+        
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+.primary-button,
+.link-button,
+.tertiary-button,
+.accordion-header,
+.accordion-icon {
+    transition: none;
+    }
+}
+</style>
+
+<body>
+    <h2><b>Organize Your Data</b></h2>
+    <p>Creating a system for organizing and managing your files at the beginning of a project will make it easier to search for, find, and work with your research data. There is no one right way to organize and name your files, as this will depend on what makes the most sense for your project. However, there are some best practices that can help you develop a system that works for you.</p>
+
+    
+    <div class="accordion-container">
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-1">
+                <span>File folder structure</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-1">
+                <p>A good folder structure will allow you to keep your files organized and easy to find.</p>
+                <ul>
+                    <li><strong>Think about the organizing principles that make sense for your data.</strong> Consider how you or your research group will find, access and use your files. For example, your data can be organized by project, content, location, date, or something else.</li>
+                    <li><strong>Create an easy-to-navigate structure.</strong> The number of folders and subfolders you need will depend on your project - large projects may need many while smaller projects may only need a few. Sub-folders can facilitate navigation, but if they're not well organized they can become confusing and hard to navigate.</li>
+                    <li><strong>Take advantage of shortcuts.</strong> Use shortcuts instead of duplicating folders and files in multiple places. This can make it easier to quickly move between related folders while preventing messy and inconsistent data files.</li>
+                    <li><strong>Document your folder structure.</strong>Document any information someone would need to navigate your folder structure in a README file. A README is a plain text file that provides information about the content and organization of the folders and files it accompanies. A README should include the folder structure, file naming conventions, and any other relevant information needed to work with the files.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-2">
+                <span>File naming</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-2">
+                <p>How you name your files impacts how you are able to find and work with them. Develop and document a file naming system at the beginning of your project and use it consistently.</p>
+                <p>Note: if you're working with sensitive data, do not include sensitive information in your file names (e.g., a person's name).</p>
+                
+                <h4><b>File sorting</b></h4>
+                <p>It may be useful to sort your files by date, numerical sequence, alphabetically, or by some other system. Think about what information to include in your file names (including in what order and format) so you can sort them in a way that makes sense for your project.</p>
+                <ul>
+                <li><strong>Use date format YYYYMMDD (<a href="https://www.iso.org/iso-8601-date-and-time-format.html" rel="noopener" target="_blank">ISO 8601</a>).</strong> If you want to sort your files by date, use the format YYYYMMDD so they sort in proper chronological order. Establishing a standard date format can also help avoid confusion and ensure everyone in your research group is using the same system. For example, without establishing a standard format 20230304 could be interpreted as March 4, 2023 or April 4, 2023.</li>
+                <li><strong>Use leading zeros.</strong> If you decide to use numbers in your file names you can use leading zeros to ensure they sort appropriately. For a sequence of 1-100, use 001-100.</li>
+                </ul>
+                
+                <h4><b>Opening and executing files</b></h4>
+                <p>How you name your files may impact how you are able to open and execute them.</p>
+                <ul>
+                <li><strong>Avoid special characters (& , * % . # * ( ) ! @$ ^ ~ ' { } [ ] ? < >).</strong> Using special characters may cause problems when opening files in certain software or when using the command line.</li>
+                <li><strong>Separate words or concepts using underscores or CamelCase.</strong> Using periods or spaces in file names can cause problems if you are using the command line. An alternative is to use underscores or CamelCase (capitalizing the first letter of each new word) or concept, e.g., TransportationSurveyData2021).</li>
+                <li><strong>Use 32 or fewer characters.</strong> Long file names can be difficult to preview or read. Additionally, some programs may not be able to open files with names longer than 32 characters.</li>
+                </ul>
+                
+                <h4><b>Identifying and keeping track of files</b></h4>
+                <p>Create a file naming system that allows you to identify your files without needing to open them.</p>
+                <ul>
+                <li><strong>Use meaningful and unique file names.</strong> A meaningful name means you should be able to tell what is in the file without opening it. A unique name means no two files have the same name, even if they are in different folders. Using meaningful and unique file names will allow you to identify your files even if you remove them from the folder structure (e.g., if you are working with your files in a software environment).</li>
+                <li><strong>Avoid using terms like "final'' or "revised" to distinguish between different versions for a file.</strong> Instead, include a version control element like v1, v2, etc. You can also use version control elements to distinguish between major file updates (v1, v2) and minor file updates (v1_1, v1_2).</li>
+                </ul>
+            </div>
+            </div>
+
+        <div class="accordion">
+            <button class="accordion-header" aria-expanded="false" aria-controls="content-3">
+                <span>Version control</span>
+                <span class="accordion-icon"></span>
+            </button>
+            <div class="accordion-content" id="content-3">
+                <p>Version control is the practice of managing and retaining different iterations or revisions of files over time. It helps ensure you are working with the correct version of a file and supports collaborative work. Creating a new version of a data file after a major update can help distinguish backup points and identify errors between versions. It can also help you keep a record of changes to your files over time, go back and check your work, and retrieve data in case of data loss.</p>
+                <p>Version control may be managed manually or through version control software.</p>
+                <ul>
+                    <li><strong>Manual version control:</strong> Version control can be managed by including version control elements (e.g., v1, v2) or dates in file names, or by using a change log to document important changes between versions.</li>
+                    <li><strong>Version control tools:</strong> Some file management platforms, such as OneDrive, allow you to track changes and view previous versions of a file. While this can be a helpful feature, we do not recommend relying on tracked changes or system dating for managing major modifications.</li>
+                </ul>
+                <p>There are tools designed specifically to manage version control, including <a href="https://git-scm.com/" rel="noopener" target="_blank">Git</a>, <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>, <a href="https://www.mercurial-scm.org/" rel="noopener" target="_blank">Mercurial</a>, <a href="https://bitbucket.org/" rel="noopener" target="_blank">Bitbucket</a>, and <a href="https://subversion.apache.org/download.cgi" rel="noopener" target="_blank">Subversion</a>.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="hr-custom hr-pt-20" />
+    
+    <h3><b>Resources</b></h3>
+    
+    <h4><b>Library services</b></h4>
+    <p>The library provides support for:</p>
+    <ul>
+        <li>Understanding and implementing folder structures</li>
+        <li>Understanding and implementing file naming conventions</li>
+        <li>Understanding and implementing version control</li>
+    </ul>
+            
+    <h4><b>External resources</b></h4>
+    <ul>
+        <li><a href="https://zenodo.org/records/4004957#.YpYlgHbMJGM" rel="noopener" target="_blank">Brief Guide - Create an Effective Data Management Plan</a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://zenodo.org/records/4495482" rel="noopener" target="_blank">Brief Guide - Data Management Plan</a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://www.youtube.com/playlist?list=PL2jE_DQZemnWs5Qb3mBrbYXAaylF5mTUv" rel="noopener" target="_blank">DMP Assistant Video Tutorial Series</a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://zenodo.org/records/4495631" rel="noopener" target="_blank">Primer - Data Management Plans</a> (Digital Research Alliance of Canada)</li>
+        <li><a href="https://www.sshrc-crsh.gc.ca/funding-financement/apply-demande/guides/guide_preparing_data_management_plan-guide_preparation_plan_gestion_donnees-eng.aspx" rel="noopener" target="_blank">Guide to Preparing a Data Management Plan</a> (SSHRC - Social Sciences and Humanities Research Council)</li>
+        <li><a href="https://www.neh.gov/sites/default/files/inline-files/Data%20Management%20Plans%2C%202019.pdf" rel="noopener" target="_blank">Data Management Plans for NEH Office of Digital Humanities Proposals and Awards</a> (NEH - National Endowment for the Humanities)</li>
+        <li><a href="https://sharing.nih.gov/data-management-and-sharing-policy/planning-and-budgeting-for-data-management-and-sharing/writing-a-data-management-and-sharing-plan#after" rel="noopener" target="_blank">Writing a Data Management &amp; Sharing Plan</a> (NIH - National Institutes of Health)</li>
+        <li><a href="https://new.nsf.gov/funding/data-management-plan" rel="noopener" target="_blank">Preparing Your Data Management Plan</a> (NSF - National Science Foundation)</li>
+        <li><a href="https://www.uu.nl/en/research/research-data-management/guides/costs-of-data-management" rel="noopener" target="_blank">Costs of Data Management</a> (Utrecht University)</li>
+        <li><a href="https://ukdataservice.ac.uk//app/uploads/costingtool.pdf" rel="noopener" target="_blank">Data management costing tool and checklist</a> (UK Data Service)</li>
+        <li><a href="https://www.dcc.ac.uk/guidance/how-guides/develop-data-plan" rel="noopener" target="_blank">How to Develop a Data Management and Sharing Plan</a> (Digital Curation Centre)</li>
+        <li><a href="https://libguides.tru.ca/ld.php?content_id=36315547" rel="noopener" target="_blank">Digital File and Folder Management</a> (Thompson Rivers University)</li>
+        <li><a href="https://www.dropbox.com/scl/fi/oy41n0i2nox3n46wh49gp/Handout_versionControl.pdf?rlkey=3ckggk4ieln1ra2qxg7q18zkl&e=1&st=xowiw09t&dl=0" rel="noopener" target="_blank">Worksheet: Version Control Tools and Techniques</a> (MIT)</li>
+        <li><a href="https://www.dropbox.com/scl/fi/1zd63iszw33rh4hjcu1dl/Worksheet_fileOrg.docx?rlkey=ie9ju5lcg0awfdvfw6u83xtrs&e=1&st=316a2ge6&dl=0" rel="noopener" target="_blank">Worksheet: Naming and Organizing your Files and Folders</a> (MIT)&nbsp;</li>
+        <li><a href="https://ukdataservice.ac.uk/learning-hub/research-data-management/format-your-data/versioning/" rel="noopener" target="_blank">Versioning</a> (UK Data Service)&nbsp;</li>
+    </ul>
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordion = header.parentElement;
+                const content = accordion.querySelector('.accordion-content');
+                const isOpen = accordion.classList.contains('open');
+                
+                // Close all other accordions (optional - remove these lines for multiple open accordions)
+                document.querySelectorAll('.accordion').forEach(acc => {
+                    if (acc !== accordion) {
+                        acc.classList.remove('open');
+                        acc.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Toggle the current accordion
+                accordion.classList.toggle('open');
+                header.setAttribute('aria-expanded', !isOpen);
+                
+                // Smooth animation (optional enhancement)
+                if (!isOpen) {
+                    content.style.display = 'block';
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                    setTimeout(() => {
+                        content.style.display = 'none';
+                    }, 300);
+                }
+            });
+        });
+        
+        // Add smooth animations
+        const style = document.createElement('style');
+        style.textContent = `
+            .accordion-content {
+                transition: max-height 0.3s ease-out;
+                overflow: hidden;
+                max-height: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

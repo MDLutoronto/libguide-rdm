@@ -610,6 +610,7 @@ h4 {
                 <p>Some repositories provide added value to your data through curation to meet deposit standards. The type of curation activities will vary, but may include things like metadata creation, applying keywords, validating files, indexing data for discoverability, and more. These actions can make your data easier for others to find, understand, and reuse.</p>
             </div>
         </div>
+    </div>
 
     <hr class="hr-custom hr-pt-20" />
 

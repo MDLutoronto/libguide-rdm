@@ -528,10 +528,12 @@ h4 {
 <br>
 
 <div class="accordion-container">
-<div class="accordion"><button aria-controls="content-1" aria-expanded="false" class="accordion-header"><span>Tri-Agency data management plans (DMPs)</span> <span class="accordion-icon"></span></button>
 
-<div class="accordion-content" id="content-1">
-<p>DMP requirements (e.g. content, formatting, length, etc.) may change based on each funding opportunity, so be sure to review all guidelines before submission. SSHRC and CHIR have also provided additional guidance to help researchers navigate DMP requirements:</p>
+  <div class="accordion">
+    <button class="accordion-header" aria-controls="content-1" aria-expanded="false">
+      <span>Tri-Agency data management plans (DMPs)</span><span class="accordion-icon"></span>
+    </button>
+    <div class="accordion-content" id="content-1"><p>DMP requirements (e.g. content, formatting, length, etc.) may change based on each funding opportunity, so be sure to review all guidelines before submission. SSHRC and CHIR have also provided additional guidance to help researchers navigate DMP requirements:</p>
 
 <ul>
     <li><a href="https://sshrc-crsh.canada.ca/en/funding/opportunities/resources/guide-preparing-data-management-plan.aspx">General SSHRC DMP guidance</a></li>
@@ -542,20 +544,21 @@ h4 {
 </div>
 </div>
 
-<div class="accordion-container">
-<div class="accordion"><button aria-controls="content-2" aria-expanded="false" class="accordion-header"><span>Tri-Agency data deposit</span> <span class="accordion-icon"></span></button>
-
-<div class="accordion-content" id="content-2">
-<p>Data deposit requirements will be updated when information is available. Learn more <a href="https://guides.library.utoronto.ca/rdm/deposit-share">about depositing and sharing data</a>.</p>
+  <div class="accordion">
+    <button class="accordion-header" aria-controls="content-2" aria-expanded="false">
+      <span>Tri-Agency data deposit</span><span class="accordion-icon"></span>
+    </button>
+    <div class="accordion-content" id="content-2"><p>Data deposit requirements will be updated when information is available. Learn more <a href="https://guides.library.utoronto.ca/rdm/deposit-share">about depositing and sharing data</a>.</p>
 </div>
-</div>
+  </div>
 
-<div class="accordion-container">
-<div class="accordion"><button aria-controls="content-3" aria-expanded="false" class="accordion-header"><span>Other funder requirements</span> <span class="accordion-icon"></span></button>
+  <div class="accordion">
+    <button class="accordion-header" aria-controls="content-3" aria-expanded="false">
+      <span>Other funder requirements</span><span class="accordion-icon"></span>
+    </button>
+    <div class="accordion-content" id="content-3"><p>If you receive funding from other agencies, you will need to check their requirements in relation to research data.</p></div>
+  </div>
 
-<div class="accordion-content" id="content-3">
-<p>If you receive funding from other agencies, you will need to check their requirements in relation to research data.</p>
-</div>
 </div>
 
 <hr>

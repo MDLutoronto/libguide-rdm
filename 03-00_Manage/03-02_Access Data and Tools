@@ -516,7 +516,7 @@ h4 {
                 <p>Some places you can search for secondary or third-party data include:</p>
                 <ul>
                     <li><a href="https://mdl.library.utoronto.ca/" rel="noopener" target="_blank"><strong>Map and Data Library:</strong></a> The University of Toronto holds extensive data collections, including numeric and geospatial data. MDL staff can help you locate datasets both within these extensive collections and elsewhere.</li>
-                    <li><a href="https://onesearch.library.utoronto.ca/researchdata/data-repositories" rel="noopener" target="_blank"><strong>Research data repositories</strong></a><strong>:</strong> Research data repositories are online platforms that allow researchers to deposit and share data.</li>
+                    <li><a href="https://guides.library.utoronto.ca/rdm/data-repositories" rel="noopener" target="_blank"><strong>Research data repositories</strong></a><strong>:</strong> Research data repositories are online platforms that allow researchers to deposit and share data.</li>
                     <li><strong>Data availability statements:</strong> Some journals include data availability statements that provide information about how to access data associated with an article.</li>
                 </ul>
                 <br>
@@ -557,7 +557,7 @@ h4 {
             <div class="accordion-content" id="content-3">
                 <p>The library provides access to a variety of tools and software that support data collection, processing, and analysis. For more information, visit:</p>
                 <ul>
-                    <li><a href="https://onesearch.library.utoronto.ca/ic/licensed-software" rel="noopener" target="_blank">Licensed Software</a></li>
+                    <li><a href="https://library.utoronto.ca/use/service/licensed-software-office" rel="noopener" target="_blank">Licensed Software</a></li>
                     <li><a href="https://mdl.library.utoronto.ca/technology/support" rel="noopener" target="_blank">Map and Data Library - Technology Support</a></li>
                 </ul>
             </div>

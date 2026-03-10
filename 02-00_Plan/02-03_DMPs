@@ -522,7 +522,7 @@ h4 {
 <div class="accordion"><button aria-controls="content-1" aria-expanded="false" class="accordion-header"><span>Creating a DMP</span> <span class="accordion-icon"></span></button>
 
 <div class="accordion-content" id="content-1">
-<p>A DMP should follow the format specified by a funder or any other relevant requirements. If no format is specified you can create a DMP in whatever way works for you (e.g., a text document or Excel file). You can use the DMP <a href="https://onesearch.library.utoronto.ca/sites/default/public/rdm/DMP_Planning_Checklist_UTL_2024-03-25.pdf" rel="noopener" target="_blank">Planning Checklist</a> and <a href="https://onesearch.library.utoronto.ca/sites/default/public/rdm/dmp_planning_question_guide_-_u_of_t_libraries_-_apr2021.pdf" rel="noopener" target="_blank">Question Guide</a> to help develop your DMP.</p>
+<p>A DMP should follow the format specified by a funder or any other relevant requirements. If no format is specified you can create a DMP in whatever way works for you (e.g., a text document or Excel file). You can use the DMP <a href="https://guides.library.utoronto.ca/ld.php?content_id=37666664" rel="noopener" target="_blank">Planning Checklist</a> and <a href="https://guides.library.utoronto.ca/ld.php?content_id=37666666" rel="noopener" target="_blank">Question Guide</a> to help develop your DMP.</p>
 
 <p>DMPs should be created in consultation with all research group members and partners. If you are conducting research with Indigenous communities, your DMP should be co-created with those communities.</p>
 </div>
